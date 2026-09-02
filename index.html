@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little Tew Conservation Group</title>
+  <meta name="description" content="The Little Tew Conservation Group promotes and protects the natural and built environment of Little Tew, Chipping Norton, Oxfordshire. Read our latest planning and ecology news and join us.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%83%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== Header ===================== -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#top">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="31" fill="#4a5d3a"/>
+          <path d="M32 12c8 6 13 15 13 24 0 7-6 13-13 13s-13-6-13-13c0-9 5-18 13-24Z" fill="#c9a227"/>
+          <path d="M32 20v29" stroke="#4a5d3a" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M32 26c-4-3-8-3-11-1M32 33c5-3 9-3 12-0.5M32 40c-4-2-7-2-9-0.5" stroke="#4a5d3a" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="brand-text">
+          <strong>Little Tew</strong>
+          <span>Conservation Group</span>
+        </span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#involved">Get Involved</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#" data-open-signup>Join Us</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ===================== Hero ===================== -->
+  <div id="top"></div>
+  <section class="hero">
+    <img class="hero-bg" src="assets/img/hero-landscape.svg" alt="" aria-hidden="true">
+    <div class="hero-content">
+      <span class="eyebrow">Est. by 24 founding neighbours</span>
+      <h1>Protecting Little Tew's countryside, character &amp; wildlife</h1>
+      <p class="lead">We're a resident-led group working to conserve the natural and built environment of Little Tew, Oxfordshire &mdash; from its ancient meadows to its conservation area &mdash; for this generation and the next.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#" data-open-signup>Sign Up for Updates</a>
+        <a class="btn btn-outline" href="#news">Read the Latest News</a>
+      </div>
+    </div>
+    <div class="hero-scroll">Scroll to explore ↓</div>
+  </section>
+
+  <!-- ===================== Sign-up modal (pop-up) ===================== -->
+  <div class="modal-overlay" id="signup-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal">
+      <button class="modal-close" type="button" data-modal-close aria-label="Close sign-up form">&times;</button>
+
+      <div class="modal-body">
+        <svg class="modal-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="31" fill="#4a5d3a"/>
+          <path d="M32 12c8 6 13 15 13 24 0 7-6 13-13 13s-13-6-13-13c0-9 5-18 13-24Z" fill="#c9a227"/>
+        </svg>
+        <h3 id="modal-title">Join the Little Tew Conservation Group</h3>
+        <p class="modal-sub">Membership is open to all residents of Little Tew and anyone who supports our objectives. Pop your details below and we'll keep you posted on planning matters, events and how to get involved.</p>
+
+        <form id="signup-form" action="https://formspree.io/f/FORM_ENDPOINT" method="POST">
+          <div class="form-row">
+            <label for="signup-name">Full name</label>
+            <input type="text" id="signup-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="form-row">
+            <label for="signup-email">Email address</label>
+            <input type="email" id="signup-email" name="email" autocomplete="email" required>
+          </div>
+          <div class="form-row">
+            <label for="signup-address">Street / area in Little Tew <span style="font-weight:400;color:#8a8262;">(optional)</span></label>
+            <input type="text" id="signup-address" name="address" autocomplete="street-address">
+          </div>
+          <button class="btn btn-primary form-submit" type="submit">Keep Me Informed</button>
+          <p class="form-note">We'll only use your details to send Conservation Group news and never share them with third parties. Unsubscribe any time.</p>
+        </form>
+      </div>
+
+      <div class="form-success">
+        <svg class="modal-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="31" fill="#4a5d3a"/>
+          <path d="M20 33l8 8 16-18" stroke="#f6f0e2" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Thank you!</h3>
+        <p class="modal-sub">You're on the list &mdash; we'll be in touch with news from Little Tew soon.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky bar that reappears once the pop-up has been dismissed -->
+  <div class="join-bar" id="join-bar">
+    <div class="join-bar-inner">
+      <p>🌿 Stay in the loop on planning applications, wildlife surveys and village events.</p>
+      <div>
+        <a class="btn btn-primary" href="#" data-open-signup style="padding:8px 18px;font-size:0.88rem;">Sign Up</a>
+        <button class="join-bar-close" type="button" aria-label="Dismiss">&times;</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ===================== About ===================== -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Who we are</span>
+          <h2>A village group rooted in Little Tew</h2>
+          <p>Formed by 24 founding members, the Little Tew Conservation Group exists to promote and protect the natural and built environment of our village, in Chipping Norton, Oxfordshire.</p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <h3>Our objectives</h3>
+            <ol class="objectives">
+              <li><span class="num">1</span><p>Promote the conservation of the natural and built environment of Little Tew.</p></li>
+              <li><span class="num">2</span><p>Advocate for sustainable development practices that respect the village's character and heritage.</p></li>
+              <li><span class="num">3</span><p>Raise awareness of conservation issues within the community.</p></li>
+              <li><span class="num">4</span><p>Engage with the Parish Meeting, local authorities and other stakeholders to help prevent inappropriate development.</p></li>
+              <li><span class="num">5</span><p>Organise events, workshops and campaigns to support conservation efforts.</p></li>
+            </ol>
+          </div>
+
+          <aside class="about-facts">
+            <h4>The Group, in brief</h4>
+            <ul class="fact-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <div><strong>Open membership</strong>Open to all residents of Little Tew, and anyone who supports our objectives, via an annual subscription set each year at the AGM.</div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                <div><strong>Annual General Meeting</strong>Held once a year to review activities, elect the Committee, and set plans for the year ahead. Extra meetings can be called as needed.</div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.35-9.5-8.5C.6 8 2 4 6 4c2.2 0 3.6 1.3 6 4 2.4-2.7 3.8-4 6-4 4 0 5.4 4 3.5 7.5C19 15.65 12 20 12 20Z"/></svg>
+                <div><strong>Run by a volunteer Committee</strong>A Chair, Secretary, Treasurer and up to three additional members, elected annually, handle day-to-day running of the Group.</div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5Z"/></svg>
+                <div><strong>Purely for the village</strong>All funds raised are held in the Group's own account and used solely to further our conservation objectives.</div>
+              </li>
+            </ul>
+            <a class="btn btn-outline" href="#" data-open-signup>Become a Member</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="meadow-divider"><img src="assets/img/meadow-strip.svg" alt="" aria-hidden="true"></div>
+
+    <!-- ===================== News ===================== -->
+    <section class="news" id="news">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">From the Committee</span>
+          <h2>Planning &amp; conservation news</h2>
+          <p>A summary of recent submissions made on the Group's behalf, and the ecological surveys shaping how we care for the land around the village.</p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="news-grid">
+
+          <article class="news-card">
+            <div class="news-card-top">
+              <span class="tag tag-alert">Planning &amp; SSSI</span>
+              <span class="news-date">5 February 2025</span>
+            </div>
+            <div class="news-card-body">
+              <h3>SSSI drainage concerns remain unresolved, ecologists warn</h3>
+              <p>Independent ecologists Bioscan (UK) Ltd wrote to West Oxfordshire District Council raising continued concerns about application 24/01861/FUL (Land NW of Little Tew) and its potential impact on the Little Tew Meadows SSSI. While the applicant's revised ecology report conceded a number of errors &mdash; including previously mis-classified and under-valued grassland habitats &mdash; Bioscan found the applicant's own hydrology evidence acknowledges a likely groundwater link to the SSSI, with no field testing carried out and no clear plan for managing surface water, foul drainage or treatment-system failure so close to this nationally protected site.</p>
+              <p class="news-meta">Source: Bioscan (UK) Ltd, Stage 1 response to WODC &middot; Ref DW/E2232/SE-L1</p>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-card-top">
+              <span class="tag tag-alert">Planning</span>
+              <span class="news-date">12 August 2024</span>
+            </div>
+            <div class="news-card-body">
+              <h3>Group objects to large self-build dwelling off Enstone Road</h3>
+              <p>Acting on behalf of the Conservation Group, Chadwick Town Planning formally objected to application 24/01521/FUL: a self-build house, pool and pool house on open farmland at the southern gateway to the Little Tew Conservation Area. At 7,922 sq ft, the proposed dwelling is around eight times the size of the average UK home. The objection sets out conflicts with Local Plan and NPPF countryside policy, harm to Conservation Area views, loss of amenity for users of the public footpath crossing the site, and risk to the adjoining Little Tew Meadows SSSI.</p>
+              <p class="news-meta">Source: Chadwick Town Planning, representation to WODC &middot; Ref ARI001/dc</p>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-card-top">
+              <span class="tag tag-alert">Planning</span>
+              <span class="news-date">17 September 2024</span>
+            </div>
+            <div class="news-card-body">
+              <h3>Neighbours renew objection to Chipping Norton Road scheme</h3>
+              <p>A revised application (24/01861/FUL) for a large country house, stables courtyard, solar array, drainage works and a new lake on Chipping Norton Road drew a fresh objection from neighbouring landowners, closely echoing concerns already raised by the Conservation Group. The scheme closely resembles a previous proposal refused by the Council in December 2022 for failing to meet the exceptional design bar required for new countryside homes, and for harming the setting of the Conservation Area &mdash; concerns the Group considers remain unaddressed, alongside renewed risk to the Little Tew Meadows SSSI.</p>
+              <p class="news-meta">Source: Chadwick Town Planning, representation to WODC on behalf of Studio Richter Mahr</p>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-card-top">
+              <span class="tag tag-good">Good News &amp; Wildlife</span>
+              <span class="news-date">FWAG habitat survey</span>
+            </div>
+            <div class="news-card-body">
+              <h3>Magpie Farm survey reveals rich wildflower meadows</h3>
+              <p>A botanical and soil survey of grassland parcels at Magpie Farm recorded healthy populations of Lowland Meadow indicator species &mdash; including bird's-foot trefoil, knapweed, salad burnet, great burnet and dropwort &mdash; with several fields already qualifying for the Priority Habitat Inventory. The report sets out a positive path forward through careful grazing and, where needed, seed introduction, alongside a proposed Sustainable Farming Incentive scheme &mdash; a hopeful example of nature-friendly land management on the doorstep of the village.</p>
+              <p class="news-meta">Source: FWAG farm ecology &amp; soils survey, Magpie Farm, Little Tew</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Get Involved ===================== -->
+    <section class="get-involved" id="involved">
+      <div class="container">
+        <span class="eyebrow">Every voice helps</span>
+        <h2>Help us keep Little Tew special</h2>
+        <p style="max-width:600px;margin:0 auto;color:#5a5240;">Whether it's joining as a member, coming along to the AGM, or simply staying informed so you can add your voice when it matters &mdash; there's a place for you in the Group.</p>
+        <div class="get-involved-actions">
+          <a class="btn btn-primary" href="#" data-open-signup>Sign Up for Updates</a>
+          <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="31" fill="#c9a227"/>
+              <path d="M32 12c8 6 13 15 13 24 0 7-6 13-13 13s-13-6-13-13c0-9 5-18 13-24Z" fill="#3e2f1a"/>
+            </svg>
+            <strong>Little Tew Conservation Group</strong>
+          </div>
+          <p style="max-width:320px;font-size:0.92rem;">Promoting and protecting the natural and built environment of Little Tew, Chipping Norton, Oxfordshire.</p>
+        </div>
+
+        <div>
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="#about">About the Group</a></li>
+            <li><a href="#news">Planning &amp; News</a></li>
+            <li><a href="#involved">Get Involved</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:hello@littletewconservation.org.uk">hello@littletewconservation.org.uk</a></li>
+            <li>Little Tew, Chipping Norton, Oxfordshire</li>
+            <li><a href="#" data-open-signup>Join the mailing list</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="year"></span> Little Tew Conservation Group. All rights reserved.</span>
+        <span>Registered under the Group's Constitution, Article I.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
