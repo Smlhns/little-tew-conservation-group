@@ -88,25 +88,64 @@
   }
 
   // Sign-up form submit handling.
-  // NOTE FOR THE COMMITTEE: this static site has no backend. Point the form's
-  // `action` attribute (in index.html) at a form service such as Formspree,
-  // Netlify Forms, or Google Forms to start receiving real submissions.
-  // Until then, submissions are only kept locally in the visitor's browser.
+  // Submits to Formspree (https://formspree.io/f/mkjnbrlb) via fetch, so we
+  // stay on the page and can show our own success/error state inside the
+  // modal instead of redirecting to Formspree's hosted thank-you page.
+  var formError = form ? form.querySelector(".form-error") : null;
+  var formSubmitBtn = form ? form.querySelector(".form-submit") : null;
+
+  function setFormError(message) {
+    if (!formError) return;
+    if (message) {
+      formError.textContent = message;
+      formError.hidden = false;
+    } else {
+      formError.textContent = "";
+      formError.hidden = true;
+    }
+  }
+
+  function setFormSubmitting(isSubmitting) {
+    if (!formSubmitBtn) return;
+    formSubmitBtn.disabled = isSubmitting;
+    formSubmitBtn.textContent = isSubmitting ? "Sending…" : "Keep Me Informed";
+  }
+
   if (form) {
     form.addEventListener("submit", function (evt) {
-      var action = form.getAttribute("action");
-      var isConfigured = action && action.indexOf("FORM_ENDPOINT") === -1;
+      evt.preventDefault();
+      setFormError(null);
+      setFormSubmitting(true);
 
-      if (!isConfigured) {
-        evt.preventDefault();
-        try { localStorage.setItem(STORAGE_SUBMITTED, "1"); } catch (e) {}
-        if (modalBody && modalSuccess) {
-          modalBody.classList.add("is-hidden");
-          modalSuccess.classList.add("is-visible");
-        }
-        window.setTimeout(function () { closeModal(false); }, 2600);
-      }
-      // If a real endpoint is configured, let the form submit normally.
+      fetch(form.getAttribute("action"), {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (response) {
+          if (response.ok) {
+            try { localStorage.setItem(STORAGE_SUBMITTED, "1"); } catch (e) {}
+            form.reset();
+            if (modalBody && modalSuccess) {
+              modalBody.classList.add("is-hidden");
+              modalSuccess.classList.add("is-visible");
+            }
+            window.setTimeout(function () { closeModal(false); }, 2600);
+            return;
+          }
+          return response.json().catch(function () { return null; }).then(function (data) {
+            var message = data && data.errors && data.errors.length
+              ? data.errors.map(function (e) { return e.message; }).join(", ")
+              : "Something went wrong sending that — please try again, or email us directly.";
+            setFormError(message);
+          });
+        })
+        .catch(function () {
+          setFormError("Couldn't reach the server — check your connection and try again.");
+        })
+        .finally(function () {
+          setFormSubmitting(false);
+        });
     });
   }
 

@@ -74,7 +74,7 @@
         <h3 id="modal-title">Join the Little Tew Conservation Group</h3>
         <p class="modal-sub">Membership is open to all residents of Little Tew and anyone who supports our objectives. Pop your details below and we'll keep you posted on planning matters, events and how to get involved.</p>
 
-        <form id="signup-form" action="https://formspree.io/f/FORM_ENDPOINT" method="POST">
+        <form id="signup-form" action="https://formspree.io/f/mkjnbrlb" method="POST">
           <div class="form-row">
             <label for="signup-name">Full name</label>
             <input type="text" id="signup-name" name="name" autocomplete="name" required>
@@ -87,7 +87,10 @@
             <label for="signup-address">Street / area in Little Tew <span style="font-weight:400;color:#8a8262;">(optional)</span></label>
             <input type="text" id="signup-address" name="address" autocomplete="street-address">
           </div>
+          <input type="hidden" name="_subject" value="New Little Tew Conservation Group sign-up">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <button class="btn btn-primary form-submit" type="submit">Keep Me Informed</button>
+          <p class="form-error" role="alert" hidden></p>
           <p class="form-note">We'll only use your details to send Conservation Group news and never share them with third parties. Unsubscribe any time.</p>
         </form>
       </div>

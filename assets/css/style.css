@@ -387,6 +387,18 @@ a:hover { color: var(--terracotta); }
   margin-top: 14px;
 }
 
+.form-error {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--terracotta-dark);
+  background: #f6e4d8;
+  border: 1px solid rgba(181, 101, 29, 0.35);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 12px 0 0;
+}
+.form-error[hidden] { display: none; }
+
 .form-submit { width: 100%; justify-content: center; margin-top: 6px; }
 
 .form-success {
