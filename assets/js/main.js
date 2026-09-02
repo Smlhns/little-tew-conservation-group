@@ -9,6 +9,9 @@
   var modalSuccess = overlay ? overlay.querySelector(".form-success") : null;
   var form = document.getElementById("signup-form");
   var joinBar = document.getElementById("join-bar");
+  var toast = document.getElementById("signup-toast");
+  var toastCloseBtn = toast ? toast.querySelector(".toast-close") : null;
+  var toastTimer = null;
   var nav = document.querySelector(".nav");
   var navToggle = document.querySelector(".nav-toggle");
 
@@ -38,6 +41,23 @@
 
   function hideJoinBar() {
     if (joinBar) joinBar.classList.remove("is-visible");
+  }
+
+  function showToast() {
+    if (!toast) return;
+    toast.classList.add("is-visible");
+    window.clearTimeout(toastTimer);
+    toastTimer = window.setTimeout(hideToast, 6000);
+  }
+
+  function hideToast() {
+    if (!toast) return;
+    toast.classList.remove("is-visible");
+    window.clearTimeout(toastTimer);
+  }
+
+  if (toastCloseBtn) {
+    toastCloseBtn.addEventListener("click", hideToast);
   }
 
   // Open automatically on first visit this session, after a short delay.
@@ -130,7 +150,18 @@
               modalBody.classList.add("is-hidden");
               modalSuccess.classList.add("is-visible");
             }
-            window.setTimeout(function () { closeModal(false); }, 2600);
+            // Brief confirmation flash inside the modal, then return the
+            // visitor to the site and greet them with a small pop-up.
+            window.setTimeout(function () {
+              closeModal(false);
+              showToast();
+              window.setTimeout(function () {
+                if (modalBody && modalSuccess) {
+                  modalBody.classList.remove("is-hidden");
+                  modalSuccess.classList.remove("is-visible");
+                }
+              }, 300);
+            }, 900);
             return;
           }
           return response.json().catch(function () { return null; }).then(function (data) {
