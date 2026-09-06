@@ -629,6 +629,10 @@ a:hover { color: var(--terracotta); }
 }
 .tag-alert { background: #f1dcc8; color: var(--terracotta-dark); }
 .tag-good { background: #dfe8cd; color: var(--moss-dark); }
+.tag-meetup { background: #f3e3ad; color: #7a5c12; }
+
+.news-card-photo { width: 100%; height: 200px; }
+.news-card-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .news-date {
   font-size: 0.82rem;
